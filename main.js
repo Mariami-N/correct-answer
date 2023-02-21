@@ -77,4 +77,22 @@ part2.style.fontSize="25px";
 
 time = 10;
 
-
+let  finish= setInterval(() => {
+        button.addEventListener("click", function(){
+            clearInterval(finish)
+            if(input.value == num1 + num2){
+                part2.innerHTML = ""
+                part2.innerHTML = "პასუხი სწორია!"
+            }else{
+                part2.innerHTML = ""
+                part2.innerHTML = "პასუხი არასწორია!"
+            }
+        })
+        satauri.innerHTML = `დარჩენილი დრო: ${time} წმ`
+        if(time === 0 ){
+            part2.innerHTML = ""
+            part2.innerHTML = "დრო ამოიწურა"
+            clearInterval(finish)
+        }
+        time--
+    }, 1000)
